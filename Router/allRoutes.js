@@ -6,7 +6,7 @@ import {Route} from "./Route.js";
  */
 export const allRoutes = [
     new Route("/", "Accueil", "/pages/home.html"),
-    //new Route("/galerie", "Galerie", "/pages/galerie.html"),
+    new Route("/galerie", "Galerie", "/pages/galerie.html"),
 ]
 
 // Affichera Route.titre - nameWebsite
