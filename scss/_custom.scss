@@ -14,24 +14,34 @@ $font-family-serif: 'Hind Madurai', serif;
 
 // Then add additional custom code here
 
-html {
+body {
     position: relative;
-    height: 100%;
+    min-height: 100vh;
 }
 
 main {
-    margin-bottom: 144px;
+    padding-bottom: 190px;
 }
 
 footer.footer {
     padding: 1rem;
     position: absolute;
     bottom: 0;
+    height: 190px;
     width: 100%;
 }
 
 p {
     font-family: $font-family-serif;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+img {
+    max-height: 400px;
+    width: auto;
 }
 
 .hero-scene {
