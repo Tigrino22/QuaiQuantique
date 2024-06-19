@@ -11996,7 +11996,9 @@ footer.footer {
   width: 100%;
 }
 
-p {
+p,
+label,
+.btn {
   font-family: "Hind Madurai", serif;
 }
 
@@ -12011,6 +12013,7 @@ img {
 
 .hero-scene {
   position: relative;
+  margin-bottom: 1rem;
 }
 .hero-scene::before {
   content: "";
@@ -12054,4 +12057,12 @@ img {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: all 0.3s;
+}
+
+.form-label {
+  color: #906427;
+}
+
+.form-control {
+  font-family: "Hind Madurai", serif;
 }/*# sourceMappingURL=main.css.map */

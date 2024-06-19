@@ -43,8 +43,10 @@ footer.footer {
     width: 100%;
 }
 
-// Changement de police pour tous les p
-p {
+// Changement de police pour tous les éléments saisis ici
+p,
+label,
+.btn{
     font-family: $font-family-serif;
 }
 
@@ -62,6 +64,7 @@ img {
 // Ajustement du hero des pages
 .hero-scene {
     position: relative;
+    margin-bottom: 1rem;
 
     &::before{
         content: "";
@@ -119,4 +122,11 @@ img {
         opacity: 0;
         transition: all .3s;
     }
+}
+
+.form-label {
+    color: $primary;
+}
+.form-control {
+    font-family: $font-family-serif;
 }
