@@ -31,6 +31,7 @@ footer.footer {
     width: 100%;
 }
 
+// Changement de police pour tous les p
 p {
     font-family: $font-family-serif;
 }
@@ -39,11 +40,14 @@ p {
     text-align: justify;
 }
 
+// gestion de la taille des photos
 img {
     max-height: 400px;
     width: auto;
 }
 
+
+// Ajustement du hero des pages
 .hero-scene {
     position: relative;
 
@@ -73,4 +77,34 @@ img {
         
     }
 
+}
+
+// Hover titre des images de la galerie
+.image-card {
+    position: relative;
+
+    &:hover {
+
+        .titre-image {
+            opacity: 1;
+        }
+        
+        img {
+            filter: brightness(.4);
+        }
+
+    }
+
+    img {
+        transition: all .3s;
+    }
+
+    .titre-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all .3s;
+    }
 }
