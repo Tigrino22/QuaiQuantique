@@ -13,11 +13,8 @@ const getRouteByUrl = (url) => {
             currentRoute = element;
         }
     });
-    if (currentRoute != null) {
-        return currentRoute;
-    } else {
-        return route404;
-    }
+    
+    return currentRoute ? currentRoute : route404;
 }
 
 // Fonction pour charger le contenu de la page
@@ -27,9 +24,17 @@ const loadContentPage = async () => {
     // Récup de l'url actuelle
     const actualRoute = getRouteByUrl(path);
     // Récup du contenu de la page demandée
+    
+
+    // Classe pour transition de sortie
+    const main = document.getElementById("main-page");
+
+    // Attente fin de transition pour afficher le contenue de la page
+ 
+
     const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
 
-    document.getElementById("main-page").innerHTML = html;
+    main.innerHTML = html;
 
     if (actualRoute.pathJs) {
         // création de la balise script
@@ -42,7 +47,10 @@ const loadContentPage = async () => {
     }
 
     document.title = actualRoute.title + " - " + nameWebsite;
+
 };
+
+
 
 const routeEvent = (event) => {
     event = event || window.event;
