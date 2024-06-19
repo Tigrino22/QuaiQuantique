@@ -7,9 +7,10 @@ import {Route} from "./Route.js";
 export const allRoutes = [
     new Route("/", "Accueil", "/pages/home.html"),
     new Route("/galerie", "Galerie", "/pages/galerie.html"),
-    new Route("/login", "Connexion", "/pages/login.html"),
-    new Route("/register", "Inscription", "/pages/register.html"),
-    new Route("/account", "Mon Compte", "/pages/account.html"),
+    new Route("/login", "Connexion", "/pages/auth/login.html"),
+    new Route("/register", "Inscription", "/pages/auth/register.html"),
+    new Route("/account", "Mon Compte", "/pages/auth/account.html"),
+    new Route("/edit-password", "Edit Password", "/pages/auth/editPassword.html"),
 ]
 
 // Affichera Route.titre - nameWebsite

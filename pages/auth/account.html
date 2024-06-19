@@ -1,13 +1,13 @@
 <div class="hero-scene text-center text-white">
     <div class="hero-scene-content">
 
-        <h1>Inscription</h1>
+        <h1>Mon compte</h1>
 
     </div>
 
 </div>
 
-<div class="container mx-auto col-12 col-lg-4 col-md-8">
+<div class="container mx-auto col-12 col-lg-4 col-md-8 my-5">
     <form>
         <div class="row">
             <div class="col-12 col-sm-6">
@@ -22,17 +22,23 @@
             </div>
             <div class="col-12 col-sm-6">
                 <div class="mb-3">
-                    <label for="firstname" class="form-label">Allergie</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="Voir liste multiple...">
+                    <label for="AllergieInput" class="form-label">Allergies</label>
+                    <input type="text" class="form-control" id="AllergieInput"
+                        placeholder="Vos allergies (fruits de mer, arachides…)" value="Cacahouetes" name="Allergies">
                 </div>
                 <div class="mb-3">
-                    <label for="firstname" class="form-label">Nombre de convives</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="idem liste numeric">
+                    <label for="NbConvivesInput" class="form-label">Nombres de convives habituel</label>
+                    <input type="number" class="form-control" id="NbConvivesInput"
+                        placeholder="Combien vous êtes habituellement ?" value="4" name="NbConvives">
                 </div>
             </div>
             <div class="text-center mb-3">
                 <button type="submit" class="btn btn-primary">Enregistrer</button>
+                <button type="button" class="btn btn-danger">Supprimer mon compte</button>
             </div>
         </div>
     </form>
+    <div class="text-center pt-3">
+        <a href="/edit-password">Cliquez ici pour modifier votre mot de passe</a>
+    </div>
 </div>
