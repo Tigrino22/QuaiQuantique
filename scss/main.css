@@ -12041,7 +12041,8 @@ img {
 .image-card {
   position: relative;
 }
-.image-card:hover .titre-image {
+.image-card:hover .titre-image,
+.image-card:hover .action-images-button {
   opacity: 1;
 }
 .image-card:hover img {
@@ -12057,6 +12058,17 @@ img {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: all 0.3s;
+}
+.image-card .action-images-button {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  transition: opacity 0.3s;
 }
 
 .form-label {
