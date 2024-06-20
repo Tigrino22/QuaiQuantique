@@ -1,79 +1,156 @@
-
 <div class="hero-scene text-center text-white">
     <div class="hero-scene-content">
-        
         <h1>Galerie</h1>
-        
     </div>
-    
 </div>
 
-<div class="row row-cols-2 row-cols-lg-3 container-lg mx-auto my-5">
+<!-- Container de la galerie -->
+<div class="container my-5">
+    <div class="text-center mb-3">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal">Ajouter une
+            photo</button>
+    </div>
 
-    <div class="col p-3">
-        <div class="image-card text-white">
-            <img src="../img/food_2.jpg" alt="food" class="rounded img-fluid h-100">
-            <p class="titre-image">Titre</p>
-            <div class="action-images-button">
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+    <div class=" container-lg mx-auto ">
+        <div class="row row-cols-2 row-cols-lg-3">
+            <div class="col p-3">
+                <div class="image-card text-white">
+                    <img src="../img/food_2.jpg" alt="food" class="rounded img-fluid h-100">
+                    <p class="titre-image">Titre</p>
+                    <div class="action-images-button">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-3">
+                <div class="image-card text-white">
+                    <img src="../img/food_1.jpg" alt="food" class="rounded img-fluid h-100">
+                    <p class="titre-image">Titre</p>
+                    <div class="action-images-button">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-3">
+                <div class="image-card text-white">
+                    <img src="../img/kitchen-5055083_1920.jpg" alt="food" class="rounded img-fluid h-100">
+                    <p class="titre-image">Titre</p>
+                    <div class="action-images-button">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-3">
+                <div class="image-card text-white">
+                    <img src="../img/sea-food-5003722_1920.jpg" alt="food" class="rounded img-fluid h-100">
+                    <p class="titre-image">Titre</p>
+                    <div class="action-images-button">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-3">
+                <div class="image-card text-white">
+                    <img src="../img/spring-roll-6760871_1920.jpg" alt="food" class="rounded img-fluid h-100">
+                    <p class="titre-image">Titre</p>
+                    <div class="action-images-button">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col p-3">
+                <div class="image-card text-white">
+                    <img src="../img/salmon-6353898_1920.jpg" alt="food" class="rounded img-fluid h-100">
+                    <p class="titre-image">Titre</p>
+                    <div class="action-images-button">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                            data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-primary">Réserver une table</button>
+    </div>
+</div>
+
+<!-- Modal Edit-->
+<div class="modal fade" id="EditionPhotoModal" tabindex="-1" aria-labelledby="EditionPhotoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="EditionPhotoModalLabel">Édition de photo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="NameInputPhoto" class="form-label">Titre</label>
+                        <input type="email" class="form-control" id="NameInputPhoto"
+                            placeholder="Pâtes à la bolognaise">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ImageInput" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="ImageInput">
+                    </div>
+                    <div class="text-center mb-3">
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="col p-3">
-        <div class="image-card text-white">
-            <img src="../img/food_1.jpg" alt="food" class="rounded img-fluid h-100">
-            <p class="titre-image">Titre</p>
-            <div class="action-images-button">
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
+<!-- Modal Delete-->
+<div class="modal fade" id="DeletePhotoModal" tabindex="-1" aria-labelledby="DeletePhotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="DeletePhotoModalLabel">Êtes-vous sûr de vouloir supprimer cette photo?
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form>
+                    <div class="mb-3">
+                        <p>Titre photo</p>
+                    </div>
+                    <div class="mb-3">
+                        <img src="../img/food_2.jpg" alt="food" class="rounded img-fluid ">
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-danger">Supprimer</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
-    <div class="col p-3">
-        <div class="image-card text-white">
-            <img src="../img/kitchen-5055083_1920.jpg" alt="food" class="rounded img-fluid h-100">
-            <p class="titre-image">Titre</p>
-            <div class="action-images-button">
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="col p-3">
-        <div class="image-card text-white">
-            <img src="../img/sea-food-5003722_1920.jpg" alt="food" class="rounded img-fluid h-100">
-            <p class="titre-image">Titre</p>
-            <div class="action-images-button">
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="col p-3">
-        <div class="image-card text-white">
-            <img src="../img/spring-roll-6760871_1920.jpg" alt="food" class="rounded img-fluid h-100">
-            <p class="titre-image">Titre</p>
-            <div class="action-images-button">
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="col p-3">
-        <div class="image-card text-white">
-            <img src="../img/salmon-6353898_1920.jpg" alt="food" class="rounded img-fluid h-100">
-            <p class="titre-image">Titre</p>
-            <div class="action-images-button">
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-light" dta-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
-            </div>
-        </div>
-    </div>
-
 </div>
