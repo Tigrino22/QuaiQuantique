@@ -12077,4 +12077,11 @@ img {
 
 .form-control {
   font-family: "Hind Madurai", serif;
+}
+
+.allreservations a {
+  display: block;
+  color: #292222;
+  padding: 0.5rem;
+  font-family: "Hind Madurai", serif;
 }/*# sourceMappingURL=main.css.map */
