@@ -17,7 +17,7 @@ export const allRoutes = [
 
 // RESERVATIONS
     new Route("/allresa", "Vos réservations", "/pages/reservations/allresa.html"),
-    
+    new Route("/reserver", "Réserver", "/pages/reservations/reserver.html"),
 ]
 
 // Affichera Route.titre - nameWebsite

@@ -1,0 +1,73 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Faire une réservation</h1>
+    </div>
+</div>
+<div class="container col-12 col-lg-4 col-sm-8 my-5">
+
+    <form>
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input disabled type="text" class="form-control" id="name" value="John">
+                </div>
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">Prénom</label>
+                    <input disabled type="text" class="form-control" id="firstname" value="Doe">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="mb-3">
+                    <label for="AllergieInput" class="form-label">Allergies</label>
+                    <input type="text" class="form-control" id="AllergieInput"
+                        placeholder="Vos allergies (fruits de mer, arachides…)" value="Cacahouetes" name="Allergies">
+                </div>
+                <div class="mb-3">
+                    <label for="NbConvivesInput" class="form-label">Nombres de convives</label>
+                    <input type="number" class="form-control" id="NbConvivesInput"
+                        placeholder="Combien vous êtes habituellement ?" value="4" name="NbConvives">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 mb-3">
+                <label for="DateInput" class="form-label">Date</label>
+                <input type="date" class="form-control" id="DateInput" name="DateInput">
+            </div>
+            <div class="col-12 col-sm-6 mb-3 d-flex  justify-content-around align-items-center gap-4">
+                <div class="d-flex flex-column justify-content-center align-items-center ">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioResa" id="radioMidi">
+                        <label class="form-check-label" for="fradioMidi">
+                            Midi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioResa" id="radioSoir" checked>
+                        <label class="form-check-label" for="radioSoir">
+                            Soir
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="selectHour" class="form-label">Heure</label>
+                    <select class="form-select" id="selectHour">
+                        <option>19:30</option>
+                        <option>19:45</option>
+                        <option>20:00</option>
+                        <option>20:15</option>
+                        <option>20:30</option>
+                        <option>20:45</option>
+                        <option>21:00</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center mb-3">
+                <button type="submit" class="btn btn-primary">Réserver</button>
+                <button type="button" class="btn btn-danger">Annuler</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
