@@ -3,25 +3,29 @@
         <h1>Faire une réservation</h1>
     </div>
 </div>
-<div class="container col-12 col-lg-4 col-sm-8 my-5">
 
-    <form>
+
+<div class="container col-12 col-lg-4 col-sm-8 my-5 js-container">
+
+    <form method="post" id="reservationForm">
         <div class="row">
             <div class="col-12 col-sm-6">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nom</label>
-                    <input disabled type="text" class="form-control" id="name" value="John">
+                    <input disabled type="text" class="form-control" id="name" value="Doe">
+                    <input type="hidden" name="name" value="Doe">
                 </div>
                 <div class="mb-3">
                     <label for="firstname" class="form-label">Prénom</label>
-                    <input disabled type="text" class="form-control" id="firstname" value="Doe">
+                    <input disabled type="text" class="form-control" id="firstname" value="John">
+                    <input type="hidden" name="firstname" value="John">
                 </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="mb-3">
                     <label for="AllergieInput" class="form-label">Allergies</label>
                     <input type="text" class="form-control" id="AllergieInput"
-                        placeholder="Vos allergies (fruits de mer, arachides…)" value="Cacahouetes" name="Allergies">
+                        placeholder="Vos allergies (fruits de mer, arachides…)" value="" name="Allergies">
                 </div>
                 <div class="mb-3">
                     <label for="NbConvivesInput" class="form-label">Nombres de convives</label>
@@ -36,13 +40,13 @@
             <div class="col-12 col-sm-6 mb-3 d-flex  justify-content-around align-items-center gap-4">
                 <div class="d-flex flex-column justify-content-center align-items-center ">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioResa" id="radioMidi">
+                        <input class="form-check-input" type="radio" name="radioResa" id="radioMidi" value="midi">
                         <label class="form-check-label" for="fradioMidi">
                             Midi
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radioResa" id="radioSoir" checked>
+                        <input class="form-check-input" type="radio" name="radioResa" id="radioSoir" checked value="soir">
                         <label class="form-check-label" for="radioSoir">
                             Soir
                         </label>
@@ -50,7 +54,7 @@
                 </div>
                 <div>
                     <label for="selectHour" class="form-label">Heure</label>
-                    <select class="form-select" id="selectHour">
+                    <select class="form-select" id="selectHour" name="selectHour">
                         <option>19:30</option>
                         <option>19:45</option>
                         <option>20:00</option>
@@ -62,7 +66,7 @@
                 </div>
             </div>
             <div class="text-center mb-3">
-                <button type="submit" class="btn btn-primary">Réserver</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmResa" id="reserveButton">Réserver</button>
                 <button type="button" class="btn btn-danger">Annuler</button>
             </div>
         </div>
@@ -71,3 +75,31 @@
 </div>
 
 
+<!-- Modal Confirm-->
+<div class="modal fade" id="confirmResa" tabindex="-1" aria-labelledby="confirmResaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="confirmResaLabel">Confirmer cette réservation?
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form>
+                    <div class="mb-3">
+                        <p>Prénom : <span id="modalFirstname">John</span></p>
+                        <p>Nom : <span id="modalLastname">Doe</span></p>
+                        <p>Nombre de convives : <span id="modalNbConvives">4</span></p>
+                        <p>Allergies : <span id="modalAllergies">Cacahouetes</span></p>
+                        <p>Date : <span id="modalDate">24/06/2024</span></p>
+                        <p>Heure : <span id="modalHour">19:30</span></p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-secondary" id="cancelButton" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary" id="confirmButton" data-bs-dismiss="modal">Confirmer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
