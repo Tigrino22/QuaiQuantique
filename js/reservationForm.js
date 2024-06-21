@@ -1,5 +1,7 @@
 document.getElementById("reserveButton").addEventListener('click', (e) => {
 
+    e.preventDefault();
+
     //  Récupère les info form et les injecte dans la modale
     document.getElementById('modalFirstname').textContent = document.getElementById('firstname').value;
     document.getElementById('modalLastname').textContent = document.getElementById('name').value;
@@ -9,6 +11,12 @@ document.getElementById("reserveButton").addEventListener('click', (e) => {
     document.getElementById('modalHour').textContent = document.getElementById('selectHour').value;
 
     
+});
+
+document.getElementById('annulationButton').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    cleanForm('reservationForm');
 });
 
 document.getElementById('confirmButton').addEventListener('click', async (e) => {
@@ -82,7 +90,7 @@ const showAlert = () => {
 
     setTimeout(() => {
         alertDiv.remove();
-    }, 5000);
+    }, 15000);
 
     alertDiv.addEventListener('click', () => {
         alertDiv.remove();
