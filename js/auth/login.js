@@ -8,17 +8,24 @@ const submitButtonLogin = document.getElementById("submitButton");
 
 submitButtonLogin.addEventListener("click", checkCredentials);
 
+// checkSession();
+
 
 async function checkCredentials() {
 
+    
     // S'occupe de l'authentification
     sendConnection().then((response) => {
 
         // Redirect si connexion ok sinon r
             if(response.ok) {
+                
+                setSessionCookie("session", generateLongSessionId(), 1);
+
                 window.location.href = "/account";
             }
             else {
+
                 showLoginError();
             }
         });
@@ -79,6 +86,9 @@ const showLoginError = () => {
         <p>Identifiant ou mot de passe incorrect</p>
     `;
 
+    inputMailLogin.classList.add("is-invalid");
+    inputPasswordLogin.classList.add("is-invalid");
+
     const container = document.querySelector(".js-container");
     container.prepend(alertDiv);
 
@@ -91,3 +101,51 @@ const showLoginError = () => {
     });
 
 };
+
+// Fonction pour générer un faux identifiant de session long
+function generateLongSessionId() {
+    const length = 128; // Longueur souhaitée pour le session ID
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let sessionId = '';
+    for (let i = 0; i < length; i++) {
+        sessionId += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return sessionId;
+}
+
+// Fonction pour définir un cookie de session
+function setSessionCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    const cookie = `${name}=${value};${expires};path=/;SameSite=Lax`;
+    document.cookie = cookie;
+}
+
+
+// Fonction pour vérifier si un utilisateur est connecté (cookie de session présent)
+function checkSession() {
+    const sessionId = getCookie("session");
+    if (sessionId) {
+        console.log("Utilisateur connecté avec session ID:", sessionId);
+        // Redirection ou autres actions pour un utilisateur connecté
+        window.location.href = "/account"; // vers IdUser
+    } else {
+        console.log("Aucune session active");
+        // Actions pour un utilisateur non connecté
+    }
+}
+
+// Fonction pour lire un cookie
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+
