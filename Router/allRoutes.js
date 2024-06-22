@@ -10,7 +10,7 @@ export const allRoutes = [
     new Route("/galerie", "Galerie", "/pages/galerie.html"),
 
 // AUTH
-    new Route("/login", "Connexion", "/pages/auth/login.html"),
+    new Route("/login", "Connexion", "/pages/auth/login.html", "/js/auth/login.js"),
     new Route("/register", "Inscription", "/pages/auth/register.html", "/js/auth/register.js"),
     new Route("/account", "Mon Compte", "/pages/auth/account.html"),
     new Route("/edit-password", "Edit Password", "/pages/auth/editPassword.html"),
