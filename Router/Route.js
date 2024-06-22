@@ -1,4 +1,3 @@
-
 export class Route{
     constructor(url, title, pathHtml, pathJs = ""){
         this.url = url;
