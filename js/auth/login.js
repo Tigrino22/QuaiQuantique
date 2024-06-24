@@ -1,6 +1,3 @@
-const emailLogin = "tony.stark@gmail.com";
-const passwordLogin = "Azerty1234!";
-
 const inputMailLogin = document.getElementById("InputEmail");
 const inputPasswordLogin = document.getElementById("InputPassword");
 
@@ -18,9 +15,13 @@ async function checkCredentials() {
         // Redirect si connexion ok sinon r
             if(response.ok) {
 
+                // La connexion a reussi, 
+                // Nous lui mettons un token unique de connexion
+                // à voir ou mettre cete feature
                 const token = generateLongSessionId();
-                setSessionCookie("sessionID", token, 1);
-                window.location.href = "/account";
+                setCookie(sessionCookieName, token, 1);
+                setCookie(roleCookieName, "admin", 1);
+                window.location.href = "/";
             }
             else {
 
@@ -43,6 +44,8 @@ async function sendConnection() {
         const simulatedAPIResponse = simulateAPICheck(email, password);
 
         if (simulatedAPIResponse.ok){
+            // L'utilisateur a envoyé les bons credentials
+            // Envois des informations de connexion à l'API
 
             // Envoi des données au serveur pour la connexion
             const response = await fetch("/", {
@@ -99,15 +102,6 @@ const showLoginError = () => {
     });
 
 };
-
-// Fonction pour définir un cookie de session
-const setSessionCookie = (name, value, days) => {
-    const d = new Date();
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + d.toUTCString();
-    const cookie = `${name}=${value};${expires};path=/;SameSite=Lax`;
-    document.cookie = cookie;
-}
 
 // Fonction pour générer un faux identifiant de session long
 const generateLongSessionId = () => {

@@ -1,7 +1,7 @@
 import { allRoutes, nameWebsite } from "./allRoutes.js";
 import { Route } from "./Route.js";
 
-const route404 = new Route("404", "Page introuvable", "/pages/404.html");
+const route404 = new Route("404", "Page introuvable", "/pages/404.html", "", []);
 
 const getRouteByUrl = (url) => {
     let currentRoute = null;
@@ -21,6 +21,22 @@ const loadContentPage = async () => {
     if (!actualRoute) {
         console.error('Route non trouvée :', path);
         return;
+    }
+
+    // Vérification du role de l'utilisateur
+    const allRolesArray = actualRoute.authorize;
+    
+    if (allRolesArray.length > 0){
+        if (allRolesArray.includes("disconnected")) {
+            if (checkSession()){
+                window.location.replace('/');
+            }
+        } else {
+            const roleUser = getRole();
+            if(!allRolesArray.includes(roleUser)){
+                window.location.replace('/');
+            }
+        }
     }
 
     try {
@@ -45,6 +61,9 @@ const loadContentPage = async () => {
     } catch (error) {
         console.error('Failed to load page content:', error);
     }
+
+    showAndHideElementsForRoles();
+    
 };
 
 const routeEvent = (event) => {
