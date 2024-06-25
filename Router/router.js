@@ -1,5 +1,4 @@
 import { loading } from "../js/loading.js";
-// import { showAndHideElementsForRoles, checkSession } from "../js/script.js";
 import { allRoutes, nameWebsite } from "./allRoutes.js";
 import { Route } from "./Route.js";
 
@@ -65,7 +64,6 @@ const loadContentPage = async () => {
     }
 
     showAndHideElementsForRoles();
-    
     
 };
 

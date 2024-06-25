@@ -1,16 +1,13 @@
-const inputMailLogin = document.getElementById("InputEmail");
-const inputPasswordLogin = document.getElementById("InputPassword");
 
-const submitButtonLogin = document.getElementById("submitButton");
+const loginButton = document.getElementById("submitButton");
 
-submitButtonLogin.addEventListener("click", checkCredentials);
+loginButton.addEventListener('click', checkCredentials);
 
 
 async function checkCredentials() {
 
-    
     // S'occupe de l'authentification
-    sendConnection().then((response) => {
+    await sendConnection().then((response) => {
 
         // Redirect si connexion ok sinon r
             if(response.ok) {
@@ -78,7 +75,7 @@ function simulateAPICheck(email, password) {
     }
 }
 
-const showLoginError = () => {
+function showLoginError() {
 
     const alertDiv = document.createElement('div');
     alertDiv.className = 'alert alert-danger container-sm';
@@ -87,6 +84,8 @@ const showLoginError = () => {
         <p>Identifiant ou mot de passe incorrect</p>
     `;
 
+    const inputMailLogin = document.querySelector("#inputMailLogin");
+    const inputPasswordLogin = document.querySelector("#inputPasswordLogin");
     inputMailLogin.classList.add("is-invalid");
     inputPasswordLogin.classList.add("is-invalid");
 
@@ -101,10 +100,10 @@ const showLoginError = () => {
         alertDiv.remove();
     });
 
-};
+}
 
 // Fonction pour générer un faux identifiant de session long
-const generateLongSessionId = () => {
+function generateLongSessionId() {
     const length = 128; // Longueur souhaitée pour le session ID
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let sessionId = '';
@@ -112,4 +111,13 @@ const generateLongSessionId = () => {
         sessionId += characters.charAt(Math.floor(Math.random() * characters.length));
     }
     return sessionId;
+}
+
+// Fonction pour définir un cookie
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    const cookie = `${name}=${value};${expires};path=/;SameSite=Strict;`;
+    document.cookie = cookie;
 }
