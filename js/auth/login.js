@@ -1,5 +1,15 @@
-import {checkCredentials} from "./SessionManager.js";
+import { checkCredentials } from "./SessionManager.js";
 
-const loginButton = document.getElementById("submitButton");
 
-loginButton.addEventListener('click', checkCredentials);
+const loginButton = document.querySelector(".js-login-btn");
+
+if (loginButton) {
+    loginButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        checkCredentials();
+    });
+} else {
+    console.error("Login button not found");
+}
+
+

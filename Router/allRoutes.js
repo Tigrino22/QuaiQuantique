@@ -8,6 +8,7 @@ export const allRoutes = [
 // APP
     new Route("/", "Accueil", "/pages/home.html", "",[]),
     new Route("/galerie", "Galerie", "/pages/galerie.html", "", []),
+    new Route("/carte", "La carte", "/pages/carte.html", "", []),
 
 // AUTH
     new Route("/login", "Connexion", "/pages/auth/login.html", "/js/auth/login.js", ["disconnected"]),
