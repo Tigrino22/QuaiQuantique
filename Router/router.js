@@ -1,4 +1,6 @@
+import { showAndHideElementsForRoles, checkSession, getRole } from "../js/auth/SessionManager.js";
 import { loading } from "../js/loading.js";
+
 import { allRoutes, nameWebsite } from "./allRoutes.js";
 import { Route } from "./Route.js";
 
@@ -54,6 +56,7 @@ const loadContentPage = async () => {
         if (actualRoute.pathJs) {
             let scriptTag = document.createElement("script");
             scriptTag.setAttribute("type", 'text/javascript');
+            scriptTag.setAttribute("type", 'module');
             scriptTag.setAttribute("src", actualRoute.pathJs);
             document.querySelector("body").appendChild(scriptTag);
         }
