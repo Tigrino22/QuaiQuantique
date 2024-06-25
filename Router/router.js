@@ -1,3 +1,5 @@
+import { loading } from "../js/loading.js";
+// import { showAndHideElementsForRoles, checkSession } from "../js/script.js";
 import { allRoutes, nameWebsite } from "./allRoutes.js";
 import { Route } from "./Route.js";
 
@@ -64,6 +66,7 @@ const loadContentPage = async () => {
 
     showAndHideElementsForRoles();
     
+    
 };
 
 const routeEvent = (event) => {
@@ -81,3 +84,6 @@ const routeEvent = (event) => {
 window.onpopstate = loadContentPage;
 window.route = routeEvent;
 loadContentPage();
+window.addEventListener('load', () => {
+    loading();
+});
